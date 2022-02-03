@@ -13,8 +13,7 @@ RSpec.describe NavigationHelper, :type => :helper do
       end
     end
   end
-
-  context 'non-signed in user' do
+    context 'non-signed in user' do
     before(:each) { helper.stub(:user_signed_in?).and_return(false) }
     
     context '#collapsible_links_partial_path' do
@@ -25,5 +24,4 @@ RSpec.describe NavigationHelper, :type => :helper do
       end
     end
   end
-
 end

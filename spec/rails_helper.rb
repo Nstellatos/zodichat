@@ -1,5 +1,9 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
  
+  require 'capybara/poltergeist'
+  require 'factory_girl_rails'
+  require 'capybara/rspec'
+  require 'phantomjs'
 
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -82,14 +86,15 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
 
-  require 'capybara/poltergeist'
-  require 'factory_girl_rails'
-  require 'capybara/rspec'
 
   config.include Devise::Test::IntegrationHelpers, type: :feature
   config.include FactoryGirl::Syntax::Methods
   Capybara.default_max_wait_time = 10
   Capybara.javascript_driver = :poltergeist
+  options = {js_errors: false}
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, options)
+end
   Capybara.server = :puma 
 
 end
