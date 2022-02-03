@@ -7,6 +7,13 @@ end
   devise_scope :user do
     get 'signup', to: 'devise/registrations#new'
   end
+  resources :posts do
+  collection do
+    get 'sun_sign'
+    get 'rising_sign'
+    get 'moon_sign'
+  end
+end
 
   
   root to: 'pages#index'
