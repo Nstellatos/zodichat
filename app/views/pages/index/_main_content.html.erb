@@ -1,3 +1,19 @@
 <div id="main-content" class="col-sm-9">
-  <%= render @posts %>
-</div><!-- main-content -->
+  <h3 class="page-name"><%= link_to 'Sun Sign', sun_sign_posts_path %></h3>
+  <div class="row">
+    <%= render @sun_sign_posts %>
+    <%= render no_posts_partial_path(@sun_sign_posts) %>
+  </div><!-- row -->
+
+  <h3 class="page-name"><%= link_to 'Rising Sign', rising_sign_posts_path %></h3>
+  <div class="row">
+    <%= render @rising_sign_posts %>
+    <%= render no_posts_partial_path(@rising_sign_posts) %>
+  </div><!-- row -->
+
+  <h3 class="page-name"><%= link_to 'Moon Sign', moon_sign_posts_path %></h3>
+  <div class="row">
+    <%= render @moon_sign_posts %>
+    <%= render no_posts_partial_path(@moon_sign_posts) %>
+  </div><!-- row -->
+</div><!-- main_content -->
