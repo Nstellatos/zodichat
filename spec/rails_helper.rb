@@ -87,14 +87,9 @@ RSpec.configure do |config|
 
 
 
-  config.include Devise::Test::IntegrationHelpers, type: :feature
+config.include Devise::Test::IntegrationHelpers, type: :feature
   config.include FactoryGirl::Syntax::Methods
-  Capybara.default_max_wait_time = 10
   Capybara.javascript_driver = :poltergeist
-  options = {js_errors: false}
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, options)
-end
   Capybara.server = :puma 
 
 end
