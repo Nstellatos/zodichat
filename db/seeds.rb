@@ -25,15 +25,15 @@ def seed_categories
   moon_sign = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces']
 
   sun_sign.each do |name|
-    Category.create(branch: 'sun sign', name: name)
+    Category.create(branch: 'sun_sign', name: name)
   end
 
   rising_sign.each do |name|
-    Category.create(branch: 'rising sign', name: name)
+    Category.create(branch: 'rising_sign', name: name)
   end
 
   moon_sign.each do |name|
-    Category.create(branch: 'moon sign', name: name)
+    Category.create(branch: 'moon_sign', name: name)
   end
 end
 
